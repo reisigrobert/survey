@@ -565,9 +565,11 @@
         fetch(cloudFunctionURL, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
-            body: surveyData
+            body: surveyData,
+            mode: 'cors', 
+            credentials: 'include',
         })
         .then(response => {
             if (!response.ok) {
